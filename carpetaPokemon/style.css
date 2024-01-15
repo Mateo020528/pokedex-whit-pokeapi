@@ -1,0 +1,257 @@
+/* @font-face {
+     font-family: 'Pokemon Solid';
+     src: url('https://fonts.cdnfonts.com/css/pokemon-solid') format('truetype');
+     font-weight: normal;
+     font-style: normal;
+   } */
+:root{
+     --clr-black: #1c1c1c;
+     --clr-gray: #ececec;
+     --clr-white: #f7f7f7;
+     
+     --type-normal: #a8a878;
+     --type-fuego: #F08030;
+     --type-agua: #6890f0;
+     --type-planta:#78c850;
+     --type-electrico:#f8d030;
+     --type-hielo:#98d8d8;
+     --type-lucha:#c03028;
+     --type-veneno:#a040a0;
+     --type-roca:#e0c068;
+     --type-volador:#a890f0;  
+     --type-psiquico:#f85888;
+     --type-bicho:#a88820;
+     --type-fantasma:#705898;
+     --type-oscuridad:#705848;
+     --type-dragon:#7038f8;
+     --type-acero:#8888d0;
+     --type-hada:#f086bc;
+}
+*{
+     margin: 0;
+     padding: 0;
+     box-sizing: border-box;
+     color: var(--clr-black);
+     
+}
+ul{
+     list-style: none;   
+}
+
+button{
+     border-radius: none;
+     background-color: transparent;
+     margin: none;
+     border: none;
+}
+body{
+     min-height: 100vh;
+     background-color: var(--clr-gray);
+
+}
+header{
+     padding-block: 1rem;
+     box-shadow:0 0 2rem rgba(0, 0,0, .25) ;
+}
+.nav{
+     display: flex;
+     flex-direction: column;
+     gap:1rem;
+     align-items: flex-start;
+     padding-inline:2rem;
+     max-width: 1000px;
+     margin: 0 auto;
+     
+}
+.nav-list{
+     display: flex;
+     align-items: center;
+     flex-wrap: wrap;
+     gap: .5rem;
+
+}
+.btn-header{
+     background-color: var(--clr-gray);
+     padding: .5rem;
+     border-radius: 100vmax;
+     cursor: pointer;
+     text-transform: uppercase;
+     font-weight: 600;
+     box-shadow: 0 0 1rem rgba(0, 0,0, .25);
+     transition: .2s;
+}
+.btn-header:hover{
+     transform: scale(1.1);
+     box-shadow: 0 0 2rem rgba(0, 0,0, .25);
+}
+main{
+     padding: 2rem;
+     max-width: 1000px;
+     margin: 0 auto;
+
+}
+/* .pokemon-todos son las terjetas de cada uno de los pokemon */
+.pokemon-todos{
+     display: grid;
+     grid-template-columns: 1fr;
+     gap: 1rem;
+} 
+/* el media query, este desde los 470px que se vea nada mas 2 columnas y cuando llegue a los 700px que aperezcan  3 columnas
+en el media query se coloca lo que queremos que tenga la media query */
+@media screen and (min-width: 470px){
+     .pokemon-todos{
+          grid-template-columns: 1fr 1fr;
+     }
+}
+@media screen and (min-width: 700px){
+     .pokemon-todos{
+          grid-template-columns: 1fr 1fr 1fr;
+     }
+}
+/* .pokemon es la innformacion que cotiene cada tarjeta */
+.pokemon{
+     border-radius: 1rem;
+     background-color: var(--clr-white);
+     box-shadow: 0 0 3rem -1rem rgba(0,0,0, .25);
+     padding-block: 1rem;
+     text-transform: uppercase;
+     position: relative;
+     isolation:isolate;
+     overflow: hidden;
+}
+
+.pokemon-id-back{
+     position:absolute;
+     top: 1rem;
+     left:50%;
+     transform: translateX(-50%);
+     font-size: 6rem;
+     font-weight: 800;
+     z-index:-1;
+     color:var(--clr-gray)
+}
+.pokemon-imagen{
+     padding-inline: 1rem;
+     display: flex;
+     justify-content: center;
+}
+.pokemon-imagen img{
+     width: 100%;
+     max-width: 6rem;
+}
+.pokemon-info{
+     display: flex;
+     flex-direction: column;
+     gap: .5rem;
+     padding-inline: 1rem;
+     align-items: center;
+     text-align: center;
+}
+.nombre-contenedor{
+     display: flex;
+     align-items: center;
+     gap: .5rem;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.pokemon-id{
+     padding: .25rem .5rem;
+     border-radius: 100vmax;
+     font-size: .75rem;
+     font-weight: 500; 
+     background-color: var(--clr-gray);
+}
+.pokemon-nombre{
+     font-size: 1.4rem
+}
+.pokemon-tipos{
+     display: flex;
+     gap: .5rem;
+     font-size: .75rem;
+     font-weight: 500;
+     flex-wrap: wrap;
+     justify-content: center;
+}
+.tipo{
+     padding: .25rem .5rem;
+     border-radius: 100vmax;
+}
+.pokemon-stats{
+     display: flex;
+     gap: 1rem;
+     font-size: .85rem;
+}
+.stat{
+     background-color: var(--clr-gray);
+     padding: .25rem .5rem;
+     border-radius: 100vmax;
+}
+.normal{
+     background-color: var(--type-normal);
+     color:var(--clr-black);
+}
+.fuego{
+     background-color: var(--type-fuego);
+     color:var(--clr-black);
+}
+.agua{
+     background-color: var(--type-agua);
+     color:var(--clr-white);
+}
+.planta{
+     background-color: var(--type-planta);
+     color:var(--clr-black);
+}
+.electrico{
+     background-color: var(--type-electrico);
+     color:var(--clr-black);
+}
+.hielo{
+     background-color: var(--type-hielo);
+     color:var(--clr-black);
+}
+.lucha{
+     background-color: var(--type-lucha);
+     color:var(--clr-white);
+}
+.veneno{
+     background-color: var(--type-veneno);
+     color:var(--clr-white);
+}
+.roca{
+     background-color: var(--type-roca);
+     color:var(--clr-black);
+}
+.volador{
+     background-color: var(--type-volador);
+     color:var(--clr-black)
+}
+.psiquico{
+     background-color: var(--type-psiquico);
+     color:var(--clr-white);
+}
+.bicho{
+     background-color: var(--type-bicho);
+     color:var(--clr-black);
+}
+.fantasma{
+     background-color: var(--type-fantasma);
+     color:var(--clr-white);
+}
+.oscuridad{
+     background-color: var(--type-oscuridad);
+     color:var(--clr-white);
+}
+.dragon{
+     background-color: var(--type-dragon);
+     color:var(--clr-white);
+}
+.acero{
+     background-color: var(--type-acero);
+     color:var(--clr-black);
+}
+.hada{
+     background-color: var(--type-hada);
+     color: var(--clr-black);
+}
+
