@@ -96,6 +96,7 @@ main{
      grid-template-columns: 1fr;
      gap: 1rem;
 } 
+
 /* el media query, este desde los 470px que se vea nada mas 2 columnas y cuando llegue a los 700px que aperezcan  3 columnas
 en el media query se coloca lo que queremos que tenga la media query */
 @media screen and (min-width: 470px){
@@ -118,6 +119,11 @@ en el media query se coloca lo que queremos que tenga la media query */
      position: relative;
      isolation:isolate;
      overflow: hidden;
+}
+.pokemon:hover{
+     transform: scale(1.1);
+     box-shadow: 0 0 2rem;
+     cursor: crosshair;
 }
 
 .pokemon-id-back{

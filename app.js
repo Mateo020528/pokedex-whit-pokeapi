@@ -1,7 +1,8 @@
 const listaPokemon = document.querySelector('#listaPokemon');// las clases se siempre se llama con numeral (#)
  let URL = 'https://pokeapi.co/api/v2/pokemon/';
  const botonesHeader = document.querySelectorAll('.btn-header'); //llamamos a los botones del header
-
+ const search = document.getElementById("searchPokemon")//llamamos a la barra de buscar 
+const pokemonTodos = document.getElementById("listaPokemon")//llamamos al div contenedor
  //i = sera la cantidad de pokemon que queremos iterar, i sera i al pincipio y subira hasta 151 mediante cada iteracion
  for ( let i=1; i <= 151; i++){
     fetch(URL + i)
@@ -70,3 +71,19 @@ const listaPokemon = document.querySelector('#listaPokemon');// las clases se si
     }
    
  }))
+
+
+search.addEventListener("keyup", () =>{
+ const buscar = search.value.toLowerCase();
+ 
+ for (let pokemon of pokemonTodos.children) //esto deberia iterar sobre los hijos de lista pokemon por ende las tarjetas a buscar 
+ {
+    const pokemonName = pokemon.querySelector(".pokemonName").textContent.toLowerCase();
+    //este obtiene el texto del elemento y lo vuelve minuscula
+    if(pokemonName.includes(buscar)){
+        Clipboard.style.display = "block";
+    } else {
+        Clipboard.style.display ='none';
+    }
+ }
+})
